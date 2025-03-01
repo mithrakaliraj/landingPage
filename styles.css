@@ -1,0 +1,342 @@
+header {
+    background-color: #0a0a0a;
+    color: #00ffcc;
+    text-align: center;
+    height: 50px;
+    padding: 10px;
+    font-style: oblique;
+    font-size: larger;
+}
+
+body {
+    background-color: #0a0a0a;
+}
+
+#other {
+    text-align: left;
+}
+
+.content-box {
+    text-align: left;
+    /* Aligns text to the left */
+    direction: ltr;
+    /* Ensures left-to-right text flow */
+    padding: 20px;
+    border: 1px solid cyan;
+}
+
+*/ .content-box {
+    width: 30%;
+    /* Adjust based on preference */
+    text-align: center;
+    padding: 20px;
+    border: 1px solid cyan;
+}
+
+.menu-bar {
+    width: 100%;
+    background: #0a0a0a;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 2px solid #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu-bar ul li {
+    display: inline-block;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.menu-bar ul li a:hover {
+    color: #00ffcc;
+    background: rgba(0, 255, 204, 0.2);
+    border-radius: 5px;
+}
+
+.inner {
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Ensure slides aren't hidden under the menu bar */
+
+.slider-container {
+    margin-top: 60px;
+}
+
+#frame {
+    margin: 0 auto;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+#frame input[type=radio] {
+    display: none;
+}
+
+#slides {
+    padding: 10px;
+    border: 5px solid #00ffcc;
+    background: #0a0a0a;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
+    border-radius: 10px;
+}
+
+#overflow {
+    width: 100%;
+    overflow: hidden;
+}
+
+#frame1:checked~#slides .inner {
+    margin-left: 0;
+}
+
+#frame2:checked~#slides .inner {
+    margin-left: -100%;
+}
+
+#frame3:checked~#slides .inner {
+    margin-left: -200%;
+}
+
+#slides .inner {
+    transition: margin-left 800ms ease-in-out;
+    width: 300%;
+    display: flex;
+    height: 500px;
+    /* Increased from 400px to 500px */
+}
+
+.slide video {
+    width: auto;
+    height: auto;
+    /* Increased height to match */
+    object-fit: cover;
+}
+
+#slides .frame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+#slides .frame_1 {
+    background: linear-gradient(to right, #001f3f, #004466);
+}
+
+#slides .frame_2 {
+    background: linear-gradient(to right, #004466, #008080);
+}
+
+#slides .frame_3 {
+    background: linear-gradient(to right, #008080, #00ffcc);
+}
+
+
+/* #slides .frame img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+}
+
+#slides .frame video {
+    max-width: 100%;
+    border-radius: 10px;
+} */
+
+.frame-content h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #00ffcc;
+}
+
+.frame-content p {
+    font-size: 16px;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+
+/* Navigation Controls */
+
+#controls {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#bullets {
+    margin-top: 10px;
+}
+
+#bullets label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #555;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#frame1:checked~#bullets label:nth-child(1),
+#frame2:checked~#bullets label:nth-child(2),
+#frame3:checked~#bullets label:nth-child(3) {
+    background: #00ffcc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    color: rgb(14, 13, 13);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+button:hover {
+    background: white;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide video {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+    color: white;
+    background: #0a0a0a;
+    border-bottom: 2px solid #00ffcc;
+}
+
+h2 {
+    color: #00ffcc;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+video {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+}
+
+section {
+    padding: 50px;
+    text-align: left;
+    /* Aligns text to the left */
+    color: white;
+    background: #0a0a0a;
+    border-bottom: 2px solid #00ffcc;
+}
+
+.content-box {
+    text-align: left;
+    /* Aligns text to the left */
+    padding: 20px;
+    border: 1px solid cyan;
+}
